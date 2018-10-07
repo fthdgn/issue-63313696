@@ -173,18 +173,19 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 3 errors and 3 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 1 error and 6 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Sat Jul 08 20:14:17 EEST 2017      </nav>
+Check performed at Sun Oct 07 18:09:01 EET 2018      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Issue Types</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
-      <a class="mdl-navigation__link" href="#MissingPermission"><i class="material-icons error-icon">error</i>Missing Permissions (3)</a>
+      <a class="mdl-navigation__link" href="#MissingPermission"><i class="material-icons error-icon">error</i>Missing Permissions (1)</a>
       <a class="mdl-navigation__link" href="#AllowBackup"><i class="material-icons warning-icon">warning</i>AllowBackup/FullBackupContent Problems (1)</a>
+      <a class="mdl-navigation__link" href="#Recycle"><i class="material-icons warning-icon">warning</i>Missing <code>recycle()</code> calls (3)</a>
       <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (1)</a>
       <a class="mdl-navigation__link" href="#GoogleAppIndexingWarning"><i class="material-icons warning-icon">warning</i>Missing support for Firebase App Indexing (1)</a>
     </nav>
@@ -192,7 +193,7 @@ Check performed at Sat Jul 08 20:14:17 EEST 2017      </nav>
   <main class="mdl-layout__content">
     <div class="mdl-layout__tab-panel is-active">
 <a name="overview"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="card0" style="display: block;">
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="OverviewCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
     <h2 class="mdl-card__title-text">Overview</h2>
@@ -202,7 +203,7 @@ Check performed at Sat Jul 08 20:14:17 EEST 2017      </nav>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
 </td></tr>
 <tr>
-<td class="countColumn">3</td><td class="issueColumn"><i class="material-icons error-icon">error</i>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons error-icon">error</i>
 <a href="#MissingPermission">MissingPermission</a>: Missing Permissions</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Security">Security</a>
 </td></tr>
@@ -212,6 +213,9 @@ Check performed at Sat Jul 08 20:14:17 EEST 2017      </nav>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Performance">Performance</a>
 </td></tr>
 <tr>
+<td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#Recycle">Recycle</a>: Missing <code>recycle()</code> calls</td></tr>
+<tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Usability">Usability</a>
@@ -219,17 +223,17 @@ Check performed at Sat Jul 08 20:14:17 EEST 2017      </nav>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GoogleAppIndexingWarning">GoogleAppIndexingWarning</a>: Missing support for Firebase App Indexing</td></tr>
-<tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (21)</a>
+<tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (29)</a>
 </td></tr></table>
 <br/>              </div>
               <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="card0Link" onclick="hideid('card0');">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="OverviewCardLink" onclick="hideid('OverviewCard');">
 Dismiss</button>            </div>
             </div>
           </section>
 <a name="Correctness"></a>
 <a name="MissingPermission"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="card1" style="display: block;">
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="MissingPermissionCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
     <h2 class="mdl-card__title-text">Missing Permissions</h2>
@@ -241,38 +245,19 @@ Dismiss</button>            </div>
 <span class="lineno"> 10 </span>    <span class="annotation">@Override</span>
 <span class="lineno"> 11 </span>    <span class="keyword">protected</span> <span class="keyword">void</span> onCreate(Bundle savedInstanceState) {
 <span class="lineno"> 12 </span>        <span class="keyword">super</span>.onCreate(savedInstanceState);
-<span class="caretline"><span class="lineno"> 13 </span>        <span class="error">getCallLog()</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="caretline"><span class="lineno"> 13 </span>        <span class="error">getCallLog()</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 14 </span>    }
 <span class="lineno"> 15 </span>
 <span class="lineno"> 16 </span>    <span class="annotation">@RequiresPermission</span>(android.Manifest.permission.READ_CALL_LOG)
-</pre>
-
-<span class="location"><a href="../../src/main/java/com/fthdgn/issue_63313696/MainActivity.java">../../src/main/java/com/fthdgn/issue_63313696/MainActivity.java</a>:18</span>: <span class="message">Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with <code>checkPermission</code>) or explicitly handle a potential <code>SecurityException</code></span><br /><pre class="errorlines">
-<span class="lineno"> 15 </span>
-<span class="lineno"> 16 </span>    <span class="annotation">@RequiresPermission</span>(android.Manifest.permission.READ_CALL_LOG)
-<span class="lineno"> 17 </span>    <span class="keyword">void</span> getCallLog() {
-<span class="caretline"><span class="lineno"> 18 </span>        <span class="error">getContentResolver().query(CallLog.Calls.CONTENT_URI, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, CallLog.Calls._ID + <span class="string">" DESC"</span>)</span>;</span>
-<span class="lineno"> 19 </span>
-<span class="lineno"> 20 </span>    }
-<span class="lineno"> 21 </span>}
-</pre>
-
-<span class="location"><a href="../../src/main/java/com/fthdgn/issue_63313696/MainActivity3.java">../../src/main/java/com/fthdgn/issue_63313696/MainActivity3.java</a>:25</span>: <span class="message">Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with <code>checkPermission</code>) or explicitly handle a potential <code>SecurityException</code></span><br /><pre class="errorlines">
-<span class="lineno"> 22 </span>    <span class="annotation">@RequiresPermission</span>(Manifest.permission.READ_CALL_LOG)
-<span class="lineno"> 23 </span>    <span class="keyword">void</span> getCallLog() {
-<span class="lineno"> 24 </span>        <span class="comment">//Lint should not complain about this line</span>
-<span class="caretline"><span class="lineno"> 25 </span>        <span class="error">getContentResolver().query(CallLog.Calls.CONTENT_URI, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, CallLog.Calls._ID + <span class="string">" DESC"</span>)</span>;</span>
-<span class="lineno"> 26 </span>    }
-<span class="lineno"> 27 </span>}
 </pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationMissingPermission" style="display: none;">
 This check scans through your code and libraries and looks at the APIs being used, and checks this against the set of permissions required to access those APIs. If the code using those APIs is called at runtime, then the program will crash.<br/>
 <br/>
-Furthermore, for permissions that are revocable (with targetSdkVersion 23), client code must also be prepared to handle the calls throwing an exception if the user rejects the request for permission at runtime.<br/><br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+Furthermore, for permissions that are revocable (with targetSdkVersion 23), client code must also be prepared to handle the calls throwing an exception if the user rejects the request for permission at runtime.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "MissingPermission" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+<br/></div>
 </div>
 </div>
 <div class="chips">
@@ -292,13 +277,13 @@ To suppress this error, use the issue id "MissingPermission" as explained in the
               </div>
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationMissingPermissionLink" onclick="reveal('explanationMissingPermission');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="card1Link" onclick="hideid('card1');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="MissingPermissionCardLink" onclick="hideid('MissingPermissionCard');">
 Dismiss</button>            </div>
             </div>
           </section>
 <a name="Security"></a>
 <a name="AllowBackup"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="card2" style="display: block;">
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="AllowBackupCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
     <h2 class="mdl-card__title-text">AllowBackup/FullBackupContent Problems</h2>
@@ -306,14 +291,13 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:7</span>: <span class="message">On SDK version 23 and up, your app data will be automatically backed up and restored on app install. Consider adding the attribute <code>android:fullBackupContent</code> to specify an <code>@xml</code> resource which configures which files to backup. More info: https://developer.android.com/training/backup/autosyncapi.html</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:7</span>: <span class="message">On SDK version 23 and up, your app data will be automatically backed up and restored on app install. Consider adding the attribute <code>android:fullBackupContent</code> to specify an <code>@xml</code> resource which configures which files to backup. More info: <a href="https://developer.android.com/training/backup/autosyncapi.html">https://developer.android.com/training/backup/autosyncapi.html</a></span><br /><pre class="errorlines">
 <span class="lineno">  4 </span>
 <span class="lineno">  5 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"android.permission.READ_CALL_LOG"</span> />
 <span class="lineno">  6 </span>
-<span class="caretline"><span class="lineno">  7 </span>    <span class="warning"><span class="tag">&lt;application</span><span class="attribute"></span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
+<span class="caretline"><span class="lineno">  7 </span>    <span class="tag">&lt;</span><span class="warning"><span class="tag">application</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
 </span><span class="lineno">  8 </span><span class="attribute">        </span><span class="prefix">android:</span><span class="attribute">allowBackup</span>=<span class="value">"true"</span>
 <span class="lineno">  9 </span>        <span class="prefix">android:</span><span class="attribute">icon</span>=<span class="value">"@mipmap/ic_launcher"</span>>
-<span class="lineno"> 10 </span>
 </pre>
 
 </div>
@@ -330,9 +314,9 @@ To fix this warning, decide whether your application should support backup, and 
 <br/>
 If not set to false, and if targeting API 23 or later, lint will also warn that you should set <code>android:fullBackupContent</code> to configure auto backup.<br/><div class="moreinfo">More info: <ul><li><a href="https://developer.android.com/training/backup/autosyncapi.html">https://developer.android.com/training/backup/autosyncapi.html</a>
 <li><a href="http://developer.android.com/reference/android/R.attr.html#allowBackup">http://developer.android.com/reference/android/R.attr.html#allowBackup</a>
-</ul></div><br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+</ul></div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "AllowBackup" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+<br/></div>
 </div>
 </div>
 <div class="chips">
@@ -352,13 +336,77 @@ To suppress this error, use the issue id "AllowBackup" as explained in the <a hr
               </div>
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationAllowBackupLink" onclick="reveal('explanationAllowBackup');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="card2Link" onclick="hideid('card2');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="AllowBackupCardLink" onclick="hideid('AllowBackupCard');">
 Dismiss</button>            </div>
             </div>
           </section>
 <a name="Performance"></a>
-<a name="UnusedResources"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="card3" style="display: block;">
+<a name="Recycle"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="RecycleCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Missing recycle() calls</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/com/fthdgn/issue_63313696/MainActivity.java">../../src/main/java/com/fthdgn/issue_63313696/MainActivity.java</a>:18</span>: <span class="message">This <code>Cursor</code> should be freed up after use with <code>#close()</code></span><br /><pre class="errorlines">
+<span class="lineno"> 15 </span>
+<span class="lineno"> 16 </span>    <span class="annotation">@RequiresPermission</span>(android.Manifest.permission.READ_CALL_LOG)
+<span class="lineno"> 17 </span>    <span class="keyword">void</span> getCallLog() {
+<span class="caretline"><span class="lineno"> 18 </span>        getContentResolver().<span class="warning">query</span>(CallLog.Calls.CONTENT_URI, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, CallLog.Calls._ID + <span class="string">" DESC"</span>);</span>
+<span class="lineno"> 19 </span>
+<span class="lineno"> 20 </span>    }
+<span class="lineno"> 21 </span>}
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/fthdgn/issue_63313696/MainActivity2.java">../../src/main/java/com/fthdgn/issue_63313696/MainActivity2.java</a>:27</span>: <span class="message">This <code>Cursor</code> should be freed up after use with <code>#close()</code></span><br /><pre class="errorlines">
+<span class="lineno"> 24 </span>        <span class="keyword">if</span> (ActivityCompat.checkSelfPermission(<span class="keyword">this</span>, Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED) {
+<span class="lineno"> 25 </span>            <span class="keyword">return</span>;
+<span class="lineno"> 26 </span>        }
+<span class="caretline"><span class="lineno"> 27 </span>        getContentResolver().<span class="warning">query</span>(CallLog.Calls.CONTENT_URI, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, CallLog.Calls._ID + <span class="string">" DESC"</span>);</span>
+<span class="lineno"> 28 </span>
+<span class="lineno"> 29 </span>    }
+<span class="lineno"> 30 </span>}
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/fthdgn/issue_63313696/MainActivity3.java">../../src/main/java/com/fthdgn/issue_63313696/MainActivity3.java</a>:25</span>: <span class="message">This <code>Cursor</code> should be freed up after use with <code>#close()</code></span><br /><pre class="errorlines">
+<span class="lineno"> 22 </span>    <span class="annotation">@RequiresPermission</span>(Manifest.permission.READ_CALL_LOG)
+<span class="lineno"> 23 </span>    <span class="keyword">void</span> getCallLog() {
+<span class="lineno"> 24 </span>        <span class="comment">//Lint should not complain about this line</span>
+<span class="caretline"><span class="lineno"> 25 </span>        getContentResolver().<span class="warning">query</span>(CallLog.Calls.CONTENT_URI, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, CallLog.Calls._ID + <span class="string">" DESC"</span>);</span>
+<span class="lineno"> 26 </span>    }
+<span class="lineno"> 27 </span>}
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationRecycle" style="display: none;">
+Many resources, such as TypedArrays, VelocityTrackers, etc., should be recycled (with a <code>recycle()</code> call) after use. This lint check looks for missing <code>recycle()</code> calls.<br/>To suppress this error, use the issue id "Recycle" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Recycle</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Performance</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 7/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationRecycleLink" onclick="reveal('explanationRecycle');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="RecycleCardLink" onclick="hideid('RecycleCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="UnusedResources"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="UnusedResourcesCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
     <h2 class="mdl-card__title-text">Unused resources</h2>
@@ -368,15 +416,19 @@ Dismiss</button>            </div>
 <div class="warningslist">
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:2</span>: <span class="message">The resource <code>R.string.app_name</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno"> 1 </span><span class="tag">&lt;resources></span>
-<span class="caretline"><span class="lineno"> 2 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"app_name"</span></span>>issue-63313696<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="caretline"><span class="lineno"> 2 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"app_name"</span></span>>issue-63313696<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 3 </span><span class="tag">&lt;/resources></span>
 </pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationUnusedResources" style="display: none;">
-Unused resources make applications larger and slow down builds.<br/><br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+Unused resources make applications larger and slow down builds.<br/>
+<br/>
+The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.<br/>
+<br/>
+You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests=true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests=true.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "UnusedResources" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+<br/></div>
 </div>
 </div>
 <div class="chips">
@@ -396,13 +448,13 @@ To suppress this error, use the issue id "UnusedResources" as explained in the <
               </div>
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationUnusedResourcesLink" onclick="reveal('explanationUnusedResources');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="card3Link" onclick="hideid('card3');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="UnusedResourcesCardLink" onclick="hideid('UnusedResourcesCard');">
 Dismiss</button>            </div>
             </div>
           </section>
 <a name="Usability"></a>
 <a name="GoogleAppIndexingWarning"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="card4" style="display: block;">
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="GoogleAppIndexingWarningCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
     <h2 class="mdl-card__title-text">Missing support for Firebase App Indexing</h2>
@@ -414,18 +466,17 @@ Dismiss</button>            </div>
 <span class="lineno">  4 </span>
 <span class="lineno">  5 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"android.permission.READ_CALL_LOG"</span> />
 <span class="lineno">  6 </span>
-<span class="caretline"><span class="lineno">  7 </span>    <span class="warning"><span class="tag">&lt;application</span><span class="attribute"></span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
+<span class="caretline"><span class="lineno">  7 </span>    <span class="warning"><span class="tag">&lt;application</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
 </span><span class="lineno">  8 </span><span class="attribute">        </span><span class="prefix">android:</span><span class="attribute">allowBackup</span>=<span class="value">"true"</span>
 <span class="lineno">  9 </span>        <span class="prefix">android:</span><span class="attribute">icon</span>=<span class="value">"@mipmap/ic_launcher"</span>>
-<span class="lineno"> 10 </span>
 </pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationGoogleAppIndexingWarning" style="display: none;">
 Adds URLs to get your app into the Google index, to get installs and traffic to your app from Google Search.<br/><div class="moreinfo">More info: <a href="https://g.co/AppIndexing/AndroidStudio">https://g.co/AppIndexing/AndroidStudio</a>
-</div><br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "GoogleAppIndexingWarning" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+<br/></div>
 </div>
 </div>
 <div class="chips">
@@ -445,12 +496,12 @@ To suppress this error, use the issue id "GoogleAppIndexingWarning" as explained
               </div>
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationGoogleAppIndexingWarningLink" onclick="reveal('explanationGoogleAppIndexingWarning');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="card4Link" onclick="hideid('card4');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="GoogleAppIndexingWarningCardLink" onclick="hideid('GoogleAppIndexingWarningCard');">
 Dismiss</button>            </div>
             </div>
           </section>
 <a name="MissingIssues"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="card5" style="display: block;">
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="MissingIssuesCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
     <h2 class="mdl-card__title-text">Disabled Checks</h2>
@@ -466,8 +517,8 @@ more <code>lint.xml</code> configuration files in the project directories.
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
 Ensures that app links are correctly set and associated with website.<br/><div class="moreinfo">More info: <a href="https://g.co/appindexing/applinks">https://g.co/appindexing/applinks</a>
-</div><br/>To suppress this error, use the issue id "AppLinksAutoVerifyError" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+</div>To suppress this error, use the issue id "AppLinksAutoVerifyError" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -476,8 +527,8 @@ Ensures that app links are correctly set and associated with website.<br/><div c
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
 Ensures that app links are correctly set and associated with website.<br/><div class="moreinfo">More info: <a href="https://g.co/appindexing/applinks">https://g.co/appindexing/applinks</a>
-</div><br/>To suppress this error, use the issue id "AppLinksAutoVerifyWarning" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+</div>To suppress this error, use the issue id "AppLinksAutoVerifyWarning" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -489,8 +540,8 @@ According to the Android Design Guide,<br/>
 <br/>
 "Other platforms use an explicit back button with label to allow the user to navigate up the application's hierarchy. Instead, Android uses the main action bar's app icon for hierarchical navigation and the navigation bar's back button for temporal navigation."<br/>
 This check is not very sophisticated (it just looks for buttons with the label "Back"), so it is disabled by default to not trigger on common scenarios like pairs of Back/Next buttons to paginate through screens.<br/><div class="moreinfo">More info: <a href="http://developer.android.com/design/patterns/pure-android.html">http://developer.android.com/design/patterns/pure-android.html</a>
-</div><br/>To suppress this error, use the issue id "BackButton" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+</div>To suppress this error, use the issue id "BackButton" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -500,9 +551,9 @@ This check is not very sophisticated (it just looks for buttons with the label "
 <div class="explanation">
 The WebP format is typically more compact than PNG and JPEG. As of Android 4.2.1 it supports transparency and lossless conversion as well. Note that there is a quickfix in the IDE which lets you perform conversion.<br/>
 <br/>
-Launcher icons must be in the PNG format.<br/><br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+Launcher icons must be in the PNG format.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "ConvertToWebp" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -510,8 +561,8 @@ To suppress this error, use the issue id "ConvertToWebp" as explained in the <a 
 </div>
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
-An "easter egg" is code deliberately hidden in the code, both from potential users and even from other developers. This lint check looks for code which looks like it may be hidden from sight.<br/><br/>To suppress this error, use the issue id "EasterEgg" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+An "easter egg" is code deliberately hidden in the code, both from potential users and even from other developers. This lint check looks for code which looks like it may be hidden from sight.<br/>To suppress this error, use the issue id "EasterEgg" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -522,8 +573,8 @@ An "easter egg" is code deliberately hidden in the code, both from potential use
 Accessing a field within the class that defines a getter for that field is at least 3 times faster than calling the getter. For simple getters that do nothing other than return the field, you might want to just reference the local field directly instead.<br/>
 <br/>
 <b>NOTE</b>: As of Android 2.3 (Gingerbread), this optimization is performed automatically by Dalvik, so there is no need to change your code; this is only relevant if you are targeting older versions of Android.<br/><div class="moreinfo">More info: <a href="http://developer.android.com/guide/practices/design/performance.html#internal_get_set">http://developer.android.com/guide/practices/design/performance.html#internal_get_set</a>
-</div><br/>To suppress this error, use the issue id "FieldGetter" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+</div>To suppress this error, use the issue id "FieldGetter" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -532,9 +583,9 @@ Accessing a field within the class that defines a getter for that field is at le
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
 Adds URLs to get your app into the Google index, to get installs and traffic to your app from Google Search.<br/><div class="moreinfo">More info: <a href="https://g.co/AppIndexing/AndroidStudio">https://g.co/AppIndexing/AndroidStudio</a>
-</div><br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "GoogleAppIndexingApiWarning" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -543,8 +594,31 @@ To suppress this error, use the issue id "GoogleAppIndexingApiWarning" as explai
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
 There are predefined sizes (for each density) for launcher icons. You should follow these conventions to make sure your icons fit in with the overall look of the platform.<br/><div class="moreinfo">More info: <a href="http://developer.android.com/design/style/iconography.html">http://developer.android.com/design/style/iconography.html</a>
-</div><br/>To suppress this error, use the issue id "IconExpectedSize" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+</div>To suppress this error, use the issue id "IconExpectedSize" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
+</div>
+<div class="issue">
+<div class="id">KotlinPropertyAccess<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+For a method to be represented as a property in Kotlin, strict &#8220;bean&#8221;-style prefixing must be used.<br/>
+<br/>
+Accessor methods require a &#8216;get&#8217; prefix or for boolean-returning methods an &#8216;is&#8217; prefix can be used.<br/><div class="moreinfo">More info: <a href="https://android.github.io/kotlin-guides/interop.html#property-prefixes">https://android.github.io/kotlin-guides/interop.html#property-prefixes</a>
+</div>To suppress this error, use the issue id "KotlinPropertyAccess" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">LambdaLast<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+To improve calling this code from Kotlin,<br/>
+parameter types eligible for SAM conversion should be last.<br/><div class="moreinfo">More info: <a href="https://android.github.io/kotlin-guides/interop.html#lambda-parameters-last">https://android.github.io/kotlin-guides/interop.html#lambda-parameters-last</a>
+</div>To suppress this error, use the issue id "LambdaLast" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -554,8 +628,8 @@ There are predefined sizes (for each density) for launcher icons. You should fol
 <div class="explanation">
 The BuildConfig class (available in Tools 17) provides a constant, "DEBUG", which indicates whether the code is being built in release mode or in debug mode. In release mode, you typically want to strip out all the logging calls. Since the compiler will automatically remove all code which is inside a "if (false)" check, surrounding your logging calls with a check for BuildConfig.DEBUG is a good idea.<br/>
 <br/>
-If you <b>really</b> intend for the logging to be present in release mode, you can suppress this warning with a @SuppressLint annotation for the intentional logging calls.<br/><br/>To suppress this error, use the issue id "LogConditional" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+If you <b>really</b> intend for the logging to be present in release mode, you can suppress this warning with a @SuppressLint annotation for the intentional logging calls.<br/>To suppress this error, use the issue id "LogConditional" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -566,8 +640,18 @@ If you <b>really</b> intend for the logging to be present in release mode, you c
 On Windows, line endings are typically recorded as carriage return plus newline: \r\n.<br/>
 <br/>
 This detector looks for invalid line endings with repeated carriage return characters (without newlines). Previous versions of the ADT plugin could accidentally introduce these into the file, and when editing the file, the editor could produce confusing visual artifacts.<br/><div class="moreinfo">More info: <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=375421">https://bugs.eclipse.org/bugs/show_bug.cgi?id=375421</a>
-</div><br/>To suppress this error, use the issue id "MangledCRLF" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+</div>To suppress this error, use the issue id "MangledCRLF" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
+</div>
+<div class="issue">
+<div class="id">MinSdkTooLow<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+The value of the <code>minSdkVersion</code> property is too low and can be incremented without noticeably reducing the number of supported devices.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "MinSdkTooLow" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -576,8 +660,8 @@ This detector looks for invalid line endings with repeated carriage return chara
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
 If a class is referenced in the manifest or in a layout file, it must also exist in the project (or in one of the libraries included by the project. This check helps uncover typos in registration names, or attempts to rename or move classes without updating the manifest file properly.<br/><div class="moreinfo">More info: <a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">http://developer.android.com/guide/topics/manifest/manifest-intro.html</a>
-</div><br/>To suppress this error, use the issue id "MissingRegistered" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+</div>To suppress this error, use the issue id "MissingRegistered" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -585,8 +669,8 @@ If a class is referenced in the manifest or in a layout file, it must also exist
 </div>
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
-Margin values should be positive. Negative values are generally a sign that you are making assumptions about views surrounding the current one, or may be tempted to turn off child clipping to allow a view to escape its parent. Turning off child clipping to do this not only leads to poor graphical performance, it also results in wrong touch event handling since touch events are based strictly on a chain of parent-rect hit tests. Finally, making assumptions about the size of strings can lead to localization problems.<br/><br/>To suppress this error, use the issue id "NegativeMargin" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+Margin values should be positive. Negative values are generally a sign that you are making assumptions about views surrounding the current one, or may be tempted to turn off child clipping to allow a view to escape its parent. Turning off child clipping to do this not only leads to poor graphical performance, it also results in wrong touch event handling since touch events are based strictly on a chain of parent-rect hit tests. Finally, making assumptions about the size of strings can lead to localization problems.<br/>To suppress this error, use the issue id "NegativeMargin" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -594,9 +678,26 @@ Margin values should be positive. Negative values are generally a sign that you 
 </div>
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
-This detector checks with a central repository to see if there are newer versions available for the dependencies used by this project. This is similar to the <code>GradleDependency</code> check, which checks for newer versions available in the Android SDK tools and libraries, but this works with any MavenCentral dependency, and connects to the library every time, which makes it more flexible but also <b>much</b> slower.<br/><br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+This detector checks with a central repository to see if there are newer versions available for the dependencies used by this project. This is similar to the <code>GradleDependency</code> check, which checks for newer versions available in the Android SDK tools and libraries, but this works with any MavenCentral dependency, and connects to the library every time, which makes it more flexible but also <b>much</b> slower.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "NewerVersionAvailable" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
+</div>
+<div class="issue">
+<div class="id">NoHardKeywords<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Do not use Kotlin&#8217;s hard keywords as the name of methods or fields.<br/>
+These require the use of backticks to escape when calling from Kotlin.<br/>
+Soft keywords, modifier keywords, and special identifiers are allowed.<br/>
+<br/>
+For example, Mockito&#8217;s <code>when</code> function requires backticks when used from Kotlin:<br/>
+<br/>
+    val callable = Mockito.mock(Callable::class.java)<br/>
+    Mockito.`when`(callable.call()).thenReturn(/* &#8230; */)<br/><div class="moreinfo">More info: <a href="https://android.github.io/kotlin-guides/interop.html#no-hard-keywords">https://android.github.io/kotlin-guides/interop.html#no-hard-keywords</a>
+</div>To suppress this error, use the issue id "NoHardKeywords" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -605,8 +706,9 @@ To suppress this error, use the issue id "NewerVersionAvailable" as explained in
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
 The <code>&lt;uses-permission></code> element should not require a permission that implies an unsupported Chrome OS hardware feature. Google Play assumes that certain hardware related permissions indicate that the underlying hardware features are required by default. To fix the issue, consider declaring the corresponding uses-feature element with <code>required="false"</code> attribute.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/topic/arc/manifest.html#implied-features">https://developer.android.com/topic/arc/manifest.html#implied-features</a>
-</div><br/>To suppress this error, use the issue id "PermissionImpliesUnsupportedChromeOsHardware" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "PermissionImpliesUnsupportedChromeOsHardware" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -617,8 +719,19 @@ The <code>&lt;uses-permission></code> element should not require a permission th
 Activities, services and content providers should be registered in the <code>AndroidManifest.xml</code> file using <code>&lt;activity></code>, <code>&lt;service></code> and <code>&lt;provider></code> tags.<br/>
 <br/>
 If your activity is simply a parent class intended to be subclassed by other "real" activities, make it an abstract class.<br/><div class="moreinfo">More info: <a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">http://developer.android.com/guide/topics/manifest/manifest-intro.html</a>
-</div><br/>To suppress this error, use the issue id "Registered" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+</div>To suppress this error, use the issue id "Registered" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
+</div>
+<div class="issue">
+<div class="id">RequiredSize<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+All views must specify an explicit <code>layout_width</code> and <code>layout_height</code> attribute. There is a runtime check for this, so if you fail to specify a size, an exception is thrown at runtime.<br/>
+<br/>
+It's possible to specify these widths via styles as well. GridLayout, as a special case, does not require you to specify a size.<br/>To suppress this error, use the issue id "RequiredSize" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -628,9 +741,9 @@ If your activity is simply a parent class intended to be subclassed by other "re
 <div class="explanation">
 If a <code>&lt;TextView></code> is used to display data, the user might want to copy that data and paste it elsewhere. To allow this, the <code>&lt;TextView></code> should specify <code>android:textIsSelectable="true"</code>.<br/>
 <br/>
-This lint check looks for TextViews which are likely to be displaying data: views whose text is set dynamically. This value will be ignored on platforms older than API 11, so it is okay to set it regardless of your <code>minSdkVersion</code>.<br/><br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+This lint check looks for TextViews which are likely to be displaying data: views whose text is set dynamically. This value will be ignored on platforms older than API 11, so it is okay to set it regardless of your <code>minSdkVersion</code>.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "SelectableText" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -638,9 +751,18 @@ To suppress this error, use the issue id "SelectableText" as explained in the <a
 </div>
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
-Using the comment <code>// STOPSHIP</code> can be used to flag code that is incomplete but checked in. This comment marker can be used to indicate that the code should not be shipped until the issue is addressed, and lint will look for these.<br/><br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+Using the comment <code>// STOPSHIP</code> can be used to flag code that is incomplete but checked in. This comment marker can be used to indicate that the code should not be shipped until the issue is addressed, and lint will look for these.  In Gradle projects, this is only checked for non-debug (release) builds.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "StopShip" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
+</div>
+<div class="issue">
+<div class="id">SyntheticAccessor<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+A private inner class which is accessed from the outer class will force the compiler to insert a synthetic accessor; this means that you are causing extra overhead. This is not important in small projects, but is important for large apps running up against the 64K method handle limit, and especially for <b>libraries</b> where you want to make sure your library is as small as possible for the cases where your library is used in an app running up against the 64K limit.<br/>To suppress this error, use the issue id "SyntheticAccessor" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -653,9 +775,20 @@ Straight single quotes and double quotes, when used as a pair, can be replaced b
 Note that you should never use grave accents and apostrophes to quote, `like this'.<br/>
 <br/>
 (Also note that you should not use curvy quotes for code fragments.)<br/><div class="moreinfo">More info: <a href="http://en.wikipedia.org/wiki/Quotation_mark">http://en.wikipedia.org/wiki/Quotation_mark</a>
-</div><br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "TypographyQuotes" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
+</div>
+<div class="issue">
+<div class="id">UnknownNullness<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+To improve referencing this code from Kotlin, consider adding<br/>
+explicit nullness information here with either <code>@NonNull</code> or <code>@Nullable</code>.<br/><div class="moreinfo">More info: <a href="https://android.github.io/kotlin-guides/interop.html#nullability-annotations">https://android.github.io/kotlin-guides/interop.html#nullability-annotations</a>
+</div>To suppress this error, use the issue id "UnknownNullness" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -665,8 +798,9 @@ To suppress this error, use the issue id "TypographyQuotes" as explained in the 
 <div class="explanation">
 This app loads native libraries using <code>System.loadLibrary()</code>.<br/>
 <br/>
-Consider adding <code>android:extractNativeLibs="false"</code> to the <code>&lt;application></code> tag in AndroidManifest.xml. Starting with Android 6.0, this will make installation faster, the app will take up less space on the device and updates will have smaller download sizes.<br/><br/>To suppress this error, use the issue id "UnpackedNativeCode" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+Consider adding <code>android:extractNativeLibs="false"</code> to the <code>&lt;application></code> tag in AndroidManifest.xml. Starting with Android 6.0, this will make installation faster, the app will take up less space on the device and updates will have smaller download sizes.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "UnpackedNativeCode" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -675,8 +809,9 @@ Consider adding <code>android:extractNativeLibs="false"</code> to the <code>&lt;
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
 The <code>&lt;uses-feature></code> element should not require this unsupported Chrome OS hardware feature. Any uses-feature not explicitly marked with <code>required="false"</code> is necessary on the device to be installed on. Ensure that any features that might prevent it from being installed on a Chrome OS device are reviewed and marked as not required in the manifest.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/topic/arc/manifest.html#incompat-entries">https://developer.android.com/topic/arc/manifest.html#incompat-entries</a>
-</div><br/>To suppress this error, use the issue id "UnsupportedChromeOsHardware" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-</div>
+</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "UnsupportedChromeOsHardware" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 <div class="issue">
@@ -684,20 +819,34 @@ The <code>&lt;uses-feature></code> element should not require this unsupported C
 </div>
 <div class="metadata">Disabled By: Default<br/>
 <div class="explanation">
-This resource id definition appears not to be needed since it is not referenced from anywhere. Having id definitions, even if unused, is not necessarily a bad idea since they make working on layouts and menus easier, so there is not a strong reason to delete these.<br/><br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+This resource id definition appears not to be needed since it is not referenced from anywhere. Having id definitions, even if unused, is not necessarily a bad idea since they make working on layouts and menus easier, so there is not a strong reason to delete these.<br/>
+<br/>
+The unused resource check can ignore tests. If you want to include resources that are only referenced from tests, consider packaging them in a test source set instead.<br/>
+<br/>
+You can include test sources in the unused resource check by setting the system property lint.unused-resources.include-tests=true, and to exclude them (usually for performance reasons), use lint.unused-resources.exclude-tests=true.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "UnusedIds" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
+</div>
+<div class="issue">
+<div class="id">WrongThreadInterprocedural<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Default<br/>
+<div class="explanation">
+Searches for interprocedural call paths that violate thread annotations in the program. Tracks the flow of instantiated types and lambda expressions to increase accuracy across method boundaries.<br/><div class="moreinfo">More info: <a href="https://developer.android.com/guide/components/processes-and-threads.html#Threads">https://developer.android.com/guide/components/processes-and-threads.html#Threads</a>
+</div>To suppress this error, use the issue id "WrongThreadInterprocedural" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
 </div>
 </div>
 </div>              </div>
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="SuppressedIssuesLink" onclick="reveal('SuppressedIssues');">
-List Missing Issues</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="card5Link" onclick="hideid('card5');">
+List Missing Issues</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="MissingIssuesCardLink" onclick="hideid('MissingIssuesCard');">
 Dismiss</button>            </div>
             </div>
           </section>
 <a name="SuppressInfo"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="card6" style="display: block;">
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="SuppressCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
     <h2 class="mdl-card__title-text">Suppressing Warnings and Errors</h2>
@@ -736,6 +885,11 @@ The format of the <code>lint.xml</code> file is something like the following:<br
 <br/>
 &lt;?xml version="1.0" encoding="UTF-8"?><br/>
 &lt;lint><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Ignore everything in the test source set --><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;issue id="all"><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ignore path="*/test/*" /><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/issue><br/>
+<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Disable this given check in this project --><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;issue id="IconMissingDensityFolder" severity="ignore" /><br/>
 <br/>
@@ -743,6 +897,7 @@ The format of the <code>lint.xml</code> file is something like the following:<br
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;issue id="ObsoleteLayoutParam"><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ignore path="res/layout/activation.xml" /><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ignore path="res/layout-xlarge/activation.xml" /><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ignore regexp="(foo|bar).java" /><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/issue><br/>
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- Ignore the UselessLeaf issue in the given file --><br/>
